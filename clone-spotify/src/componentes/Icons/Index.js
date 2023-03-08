@@ -1,9 +1,15 @@
 import Icons from './Icons.css'
+import { GrHomeRounded } from 'react-icons/gr';
+import Menu from '../Menus/Index';
+
 
 const IconHome = (props) => {
     return(
         <div className="Icones">
-            <ion-icon url={`../../public/image/icons/${props.icone}.svg`}/>
+            <Menu 
+                text={'Inicio'}
+                number={0}    
+            />
         </div>
     )
 }

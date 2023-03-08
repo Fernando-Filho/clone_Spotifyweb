@@ -1,10 +1,11 @@
-import IconHome from "./componentes/Icons/Index";
-
+import Menu from "./componentes/Menus/Index";
 
 function App() {
   return (
     <div className="App">
-      <IconHome icone={'Home'}/>
+      <Menu 
+      number={0}
+      text={'Inicio'}/>
     </div>
   );
 }
