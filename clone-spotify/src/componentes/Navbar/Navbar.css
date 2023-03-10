@@ -1,0 +1,15 @@
+.NavBar{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 88%;
+    width: 12%;
+    color: #b3b3b3;
+    font-size: 0.85em;
+    background-color: black;
+}
+
+.Icone{
+    font-size: 20px;
+    color: white;
+}

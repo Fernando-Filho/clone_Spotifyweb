@@ -1,0 +1,51 @@
+
+.Menu{
+    color: #b3b3b3;
+}
+
+.ParteA{
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.ParteA  :hover{
+    color:white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.ParteB{
+    margin-bottom: 10px;
+    border-bottom: solid 0.1rem;
+}
+
+.ParteB  :hover{
+    color:white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.ParteA .line{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.ParteB .line{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.ParteA .IconesMenus{
+    padding-right: 15px;
+    font-size: 23px;
+}
+.ParteB .IconesMenus{
+    padding-right: 15px;
+    font-size: 23px;
+}

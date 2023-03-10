@@ -1,11 +1,12 @@
-import Menu from "./componentes/Menus/Index";
+import './App.css'
+import NavBar from "./componentes/Navbar/Index";
+import PlayMusic from './componentes/PlayMusic/Index';
 
 function App() {
   return (
     <div className="App">
-      <Menu 
-      number={0}
-      text={'Inicio'}/>
+      <NavBar/>
+      <PlayMusic/>
     </div>
   );
 }
