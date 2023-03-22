@@ -7,3 +7,14 @@
     cursor: default;
     font-family: 'Roboto', sans-serif;
 }
+.App .SectionA{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90%;
+    width: 100%;
+}
+.SectionA .teste{
+    height: 85%;
+    width: 85%;
+}

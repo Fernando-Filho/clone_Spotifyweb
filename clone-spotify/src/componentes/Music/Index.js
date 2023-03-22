@@ -15,7 +15,7 @@ const Music = (props) => {
                 <h2>Controllah (feat. MC Bin Laden)</h2>
 
                 <span>
-                    <p>Gorillaz</p>
+                    <p>Gorillaz,</p>
                     <p>Mc Bin Laden</p>
                 </span>
 

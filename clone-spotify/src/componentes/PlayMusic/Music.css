@@ -2,4 +2,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    height: 10%;
+    background-color: #181818;
+}
+.PlayMusic .teste1{
+    height: 100%;
+    width: 50%;
+}
+.PlayMusic .teste2{
+    height: 100%;
+    width: 25%;
 }

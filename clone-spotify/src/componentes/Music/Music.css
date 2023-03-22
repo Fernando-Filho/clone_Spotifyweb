@@ -1,28 +1,45 @@
 .Music{
     display: flex;
-    width: 100%;
+    height: 100%;
+    width: 25%;
     flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     color: aliceblue;
-    background-color: #181818;
 }
-
+.Music .imagemMusic{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Music .imagemMusic img{
+    height: 55px;
+    width: 55px;
+    background-color: white;
+}
+.imagemMusic img :hover{
+    cursor: pointer;
+}
 .Music .InfoMusic{
     display: flex;
     flex-direction: column;
 }
 
-.Music .imagemMusic{
-    height: 100%;
+.InfoMusic h2 :hover{
+    text-decoration: underline;
 }
 
-.Music .imagemMusic img{
-    height: 67px;
-    width: 67px;
-    background-color: white;
-}
+
 
 .Music .InfoMusic span{
     display: flex;
     flex-direction: row;
+}
+.InfoMusic span p{
+    margin-right: 5px;
+}
+.Music .InfoMusic span :hover{
+    text-decoration: underline;
+    cursor: pointer;
 }
