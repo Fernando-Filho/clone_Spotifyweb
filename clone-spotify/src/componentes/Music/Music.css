@@ -1,25 +1,28 @@
-.PlayMusic{
+.Music{
     display: flex;
-    position: end end;
-    height: 7%;
     width: 100%;
     flex-direction: row;
+    align-items: center;
     color: aliceblue;
     background-color: #181818;
 }
 
-.PlayMusic .InfoMusic{
+.Music .InfoMusic{
     display: flex;
     flex-direction: column;
 }
 
-.PlayMusic .imagemMusic img{
+.Music .imagemMusic{
+    height: 100%;
+}
+
+.Music .imagemMusic img{
     height: 67px;
     width: 67px;
     background-color: white;
 }
 
-.PlayMusic .InfoMusic span{
+.Music .InfoMusic span{
     display: flex;
     flex-direction: row;
 }
