@@ -1,8 +1,9 @@
 import './Music.css'
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
 import ImageExemplo from '../../image/ImageExemplo.jpg';
 
 const Music = (props) => {
+
     return (
         <div className="Music">
 
@@ -12,7 +13,7 @@ const Music = (props) => {
 
             <div className="InfoMusic">
 
-                <h2>Controllah (feat. MC Bin Laden)</h2>
+                <h2 className='MusicName'>Controllah (feat. MC Bin Laden)</h2>
 
                 <span>
                     <p>Gorillaz,</p>
@@ -20,7 +21,7 @@ const Music = (props) => {
                 </span>
 
             </div>
-            <AiOutlineHeart/>
+            <AiFillHeart className='IconHeart' size={20}/>
 
         </div>
     )

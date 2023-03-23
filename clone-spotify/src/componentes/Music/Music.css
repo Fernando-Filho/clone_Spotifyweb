@@ -3,7 +3,8 @@
     height: 100%;
     width: 25%;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content:left;
+    margin-left: 15px;
     align-items: center;
     color: aliceblue;
 }
@@ -12,11 +13,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 25px;
 }
 .Music .imagemMusic img{
-    height: 55px;
-    width: 55px;
-    background-color: white;
+    height: 57px;
+    width: 57px;
 }
 .imagemMusic img :hover{
     cursor: pointer;
@@ -24,22 +25,40 @@
 .Music .InfoMusic{
     display: flex;
     flex-direction: column;
+    margin-right: 15px;
 }
 
-.InfoMusic h2 :hover{
+.InfoMusic .MusicName{
+    font-size: .9em;
+}
+.InfoMusic .MusicName:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
-
-
 
 .Music .InfoMusic span{
     display: flex;
     flex-direction: row;
+    font-size: .7em;
 }
 .InfoMusic span p{
+    color: #959595;
     margin-right: 5px;
 }
 .Music .InfoMusic span :hover{
+    color:white;
     text-decoration: underline;
     cursor: pointer;
 }
+.Music .IconHeart{
+    color: #959595;
+
+}
+.Music .IconHeart :hover{
+    color: white;
+}
+.Music .IconHeart :active{
+    color: green;
+    box-shadow: rgba(0, 128, 0, 0.5);
+}
+

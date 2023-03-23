@@ -1,4 +1,4 @@
-import './Music.css'
+import './PlayMusic.css'
 import Music from '../Music/Index';
 
 const PlayMusic = (props) =>{
