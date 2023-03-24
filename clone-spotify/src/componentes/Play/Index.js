@@ -3,29 +3,17 @@ import { GiPreviousButton, GiPlayButton, GiPauseButton, GiNextButton } from "rea
 import { RxShuffle } from "react-icons/rx";
 import { SlLoop } from "react-icons/sl";
 
+import {MinutoFormatado}  from './FormatationMinuts.js'
+import {SegundoFormatado}  from './FormatationSecond.js'
+
 const Play = (props) => {
 
-    let StartSeconds = 00;
-    let StartMinutes = 00; 
-    let EndtSeconds = 00;
-    let EndMinutes = 00;
     const TimeMusic = 360
-    
-    const Timer = (TimeMusic) => {
-        StartSeconds++
-        
-        if (StartMinutes < 9) {
-            
-        }
-    }
+    let TempoCorrido = 0
+    let TempoRestante = TimeMusic
 
-
-    const UpDateTime = (props) => {
-        const PortcentagemTime = props.value
-
-
-
-        
+    const TempoFormatado = (tempo) =>{
+       return( `${MinutoFormatado(tempo)}:${SegundoFormatado(tempo)}` )
     }
 
 
@@ -33,18 +21,22 @@ const Play = (props) => {
         <div className="Play">
 
             <div className='Buttons'>
-                <RxShuffle/>
-                <GiPreviousButton/>
-                <GiPauseButton/>
-                <GiPlayButton/>
-                <GiNextButton/>
-                <SlLoop/>
+                <button/><RxShuffle/>
+                <button/><GiPreviousButton/>
+                <button/><GiPauseButton/>
+                <button/><GiPlayButton/>
+                <button/><GiNextButton/>
+                <button/><SlLoop/>
             </div>
 
             <div className='timeBar'>
-                <p>`${StartMinutes}:${StartSeconds}`</p>
-                    <input type="range" min={0} step={1} max={100} oninput={UpDateTime()}></input>
-                <p>`${EndMinutes}:${EndtSeconds}`</p>
+                <p>`${TempoFormatado(TimeMusic)}`</p>
+
+                    <input type="range" min={0} step={1} max={100}
+                    //  oninput={UpDateTime()}
+                     ></input>
+
+                <p>`${TempoFormatado(TimeMusic)}`</p>
             </div>
 
         </div>
