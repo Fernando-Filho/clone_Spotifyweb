@@ -1,7 +1,7 @@
 .PlayMusic {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 8%;
     background-color: #181818;
 }
