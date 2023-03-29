@@ -1,0 +1,12 @@
+.Volume{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 23px;
+    color: #b3b3b3;
+}
+.Chield{
+    margin-left: 5px;
+    margin-right: 10px;
+
+}

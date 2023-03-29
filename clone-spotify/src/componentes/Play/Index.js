@@ -14,8 +14,8 @@ const Play = (props) => {
     
     function TempoFormatado (tempo){
 
-        return( `${MinutoFormatado(tempo)}:${SegundoFormatado(tempo)}` )
-        // return( `teste` )
+        // return( `${MinutoFormatado(tempo)}:${SegundoFormatado(tempo)}` )
+        return( `teste` )
     }
 
 

@@ -1,7 +1,9 @@
 import './Navbar.css'
+
 import Menu from '../Menu/Index';
-import { SlOptions } from "react-icons/sl";
 import MyPlayList from '../MyPlaylist/Index';
+
+import { SlOptions } from "react-icons/sl";
 
 const NavBar = (props) => {
     return (

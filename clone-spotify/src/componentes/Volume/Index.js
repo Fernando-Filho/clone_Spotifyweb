@@ -1,37 +1,57 @@
 import './Volume.css'
 
-import { IconNaTiVolumeMuteme, TiVolume, TiVolumeDown, TiVolumeUp } from "react-icons/ti";
+import React, { useState } from "react";
+
+import { TiVolumeMute, TiVolume, TiVolumeDown, TiVolumeUp } from "react-icons/ti";
 
 const Volume = (props) => {
 
-    function volumeIcon(PorcentagemVolume){
+    const [volume, setVolume] = useState(0);
+    const [icone, setIcone] = useState(<TiVolumeMute/>);
 
-        const OptionIcons = [
-          <IconNaTiVolumeMuteme/>,
-          <TiVolume/>,
-          <TiVolumeDown/>,
-          <TiVolumeUp/>,
-        ];
+    function volumeIcon(volume){
+
+      const OptionIcons = [
+        <TiVolumeMute/>,
+        <TiVolume/>,
+        <TiVolumeDown/>,
+        <TiVolumeUp/>,
+      ]
+    
+      let VolumeTeste = volume;
+
+      if (VolumeTeste >= 66) { return ( OptionIcons[3] ) }
+
+      else if (VolumeTeste >= 33) { return ( OptionIcons[2] ) }
+
+      else if (VolumeTeste > 0) { return ( OptionIcons[1] ) }
+
+      else if (VolumeTeste == 0){ return ( OptionIcons[0] ) }
       
-        if (PorcentagemVolume >= 66) { return ( OptionIcons[3] ) }
-
-        else if (PorcentagemVolume >= 33) { return ( OptionIcons[2] ) }
-
-        else if (PorcentagemVolume > 0) { return ( OptionIcons[1] ) }
-
-        else { return ( OptionIcons[0] ) }
-      
-      }
-      
-
+    }
 
     return (
         <div className="Volume">
 
-                {volumeIcon(50)}
-                <input name='VolumeRange' type="range" min={0} step={1} max={100}/>
+                <Icone size={50} iconeProp={icone} className="Chield"/>
+
+                <input
+                  className="Chield"
+                  type="range"
+                  value={volume}
+                  min={0}
+                  step={1}
+                  max={100}
+                  onChange={value => setVolume(value.target.value)}
+                  onMouseMove={() => setIcone(volumeIcon(volume))}
+                />
 
         </div>
     )
 }
+
+const Icone = ({iconeProp}) => {
+  return (<div>{iconeProp}</div>)
+}
+
 export default Volume

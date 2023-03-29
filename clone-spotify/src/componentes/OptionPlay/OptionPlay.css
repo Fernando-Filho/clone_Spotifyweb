@@ -1,0 +1,8 @@
+.OptionPlay{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 25%;
+    align-items: center;
+    justify-content: right;
+}
