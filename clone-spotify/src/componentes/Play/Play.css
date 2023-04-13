@@ -1,7 +1,13 @@
 .Play{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 50%;
-    background-color: grey;
+    color: white;
+}
+
+.TimeBar{
+    display: flex;
+    flex-direction: row;
 }
