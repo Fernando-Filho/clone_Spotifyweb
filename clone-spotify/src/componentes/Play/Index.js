@@ -12,11 +12,12 @@ import SegundoFormatado  from './Tempo/SegundoFormatado.js'
 
 const Play = (props) => {
 
-    const TempoCompletoDaMusica = 220
+    const TempoCompletoDaMusica = 120
 
     const [porcentagem, setPorcentagem] = useState(0)
     const [tempoDaMusicaPercorrido, setTempoDaMusicaPercorrido] = useState(`00:00`)
-    // const [tempoDaMusicaPercorrido, setTempoDaMusicaPercorrido] = useState(PorcentagemDaMusicaPercorrida(TempoCompletoDaMusica, porcentagem))
+    // const [tempoDaMusicaPercorrido, setTempoDaMusicaPercorrido] = useState(QuantoTempoDaMusicaPassou(TempoCompletoDaMusica, porcentagem))
+    const [tempoDaMusicaQueFalta, setTempoDaMusicaQueFalta] = useState(TempoDaMusicaFormatado(TempoCompletoDaMusica))
 
     function TempoDaMusicaFormatado(tempo){
 
@@ -25,7 +26,7 @@ const Play = (props) => {
             )
     }
 
-    function PorcentagemDaMusicaPercorrida(TempoCompletoDaMusica, PorcentagemDaMusica){
+    function QuantoTempoDaMusicaPassou(TempoCompletoDaMusica, PorcentagemDaMusica){
 
         const TempoPercorrido = Math.trunc((TempoCompletoDaMusica*PorcentagemDaMusica)/100)
 
@@ -36,6 +37,32 @@ const Play = (props) => {
         )
     }
 
+    function QuantoTempoDaMusicaFalta(TempoCompletoDaMusica, PorcentagemDaMusica){
+
+        const TempoQueFalta = Math.trunc((TempoCompletoDaMusica*(100-PorcentagemDaMusica))/100)
+
+        return(
+            console.log(`${MinutoFormatado(TempoQueFalta)}:${SegundoFormatado(TempoQueFalta)}`),
+
+            `${MinutoFormatado(TempoQueFalta)}:${SegundoFormatado(TempoQueFalta)}`
+        )
+    }
+
+    function RecalculoDoTimingDaMusica(TempoCompletoDaMusica, PorcentagemDaMusica){
+        return(
+            console.log('deu certo'),
+            setTempoDaMusicaPercorrido(() => QuantoTempoDaMusicaPassou(TempoCompletoDaMusica, porcentagem)),
+            setTempoDaMusicaQueFalta(() => QuantoTempoDaMusicaFalta(TempoCompletoDaMusica, porcentagem))
+        )
+    }
+
+
+    function teste (){
+        return(
+            setPorcentagem(porcentagem + 1),
+            console.log(porcentagem)
+        )
+    }
 
     return (
         <div className="Play">
@@ -44,15 +71,25 @@ const Play = (props) => {
                 {/* <button/><RxShuffle/>
                 <button/><GiPreviousButton/> */}
 
-                <button><GiPauseButton/></button>
-                <button><GiPlayButton/></button>
+                <button 
+                    onClick={setInterval(teste, 1000)}
+                >
+                    <GiPlayButton/>
+                </button>
+
+                <button 
+                    // onClick={setTimeout(teste, 1000)}
+                >
+                    <GiPauseButton/>
+                </button>
                 
                 {/* <button/><GiNextButton/>
                 <button/><SlLoop/> */}
             </div>
 
             <div className='TimeBar'>
-                <TempoDaMusicaPercorrido TempoProp={tempoDaMusicaPercorrido}/>
+                <TempoDaMusicaPercorrido Timing={tempoDaMusicaPercorrido}/>
+
 
                     <input
                         type="range"
@@ -61,20 +98,27 @@ const Play = (props) => {
                         step={1}
                         max={100}
                         onChange={value => setPorcentagem(value.target.value)}
-                        onMouseMoveCapture={() => setTempoDaMusicaPercorrido(() => PorcentagemDaMusicaPercorrida(TempoCompletoDaMusica, porcentagem))}
+                        // onMouseMoveCapture={() => setTempoDaMusicaPercorrido(() => QuantoTempoDaMusicaPassou(TempoCompletoDaMusica, porcentagem))}
+                        onMouseMoveCapture={() => RecalculoDoTimingDaMusica(TempoCompletoDaMusica, porcentagem)}
                         // oninput={UpDateTime()}
                      ></input>
 
-                <p>{TempoDaMusicaFormatado(TempoCompletoDaMusica)}</p>
+                {/* <p>{TempoDaMusicaFormatado(TempoCompletoDaMusica)}</p> */}
+                <TempoDaMusicaPercorrido Timing={tempoDaMusicaQueFalta}/>
             </div>
 
         </div>
     )
 }
 
-const TempoDaMusicaPercorrido = ({TempoProp}) => {
+const TempoDaMusicaPercorrido = ({Timing}) => {
     return (
-        <div>{TempoProp}</div>
+        <div>{Timing}</div>
+    )
+}
+const TempoDaMusicaQueFalta = ({Timing}) => {
+    return (
+        <div>{Timing}</div>
     )
 }
 
