@@ -12,26 +12,28 @@ import SegundoFormatado  from './Tempo/SegundoFormatado.js'
 
 const Play = (props) => {
 
-    const [porcentagem, setPorcentagem] = useState(0)
-    const [tempoDaMusicaPercorrido, setTempoDaMusicaPercorrido] = useState(`00:00`);
+    const TempoCompletoDaMusica = 220
 
-    const TempoCompletoDaMusica = 200
-    // let PorcentagemDaMusica = document.getElementById('%DaMusica')
+    const [porcentagem, setPorcentagem] = useState(0)
+    const [tempoDaMusicaPercorrido, setTempoDaMusicaPercorrido] = useState(`00:00`)
+    // const [tempoDaMusicaPercorrido, setTempoDaMusicaPercorrido] = useState(PorcentagemDaMusicaPercorrida(TempoCompletoDaMusica, porcentagem))
+
+    function TempoDaMusicaFormatado(tempo){
+
+        return(
+                `${MinutoFormatado(tempo)}:${SegundoFormatado(tempo)}` 
+            )
+    }
 
     function PorcentagemDaMusicaPercorrida(TempoCompletoDaMusica, PorcentagemDaMusica){
 
-        const TempoPercorrido = ((TempoCompletoDaMusica*PorcentagemDaMusica)/100)
+        const TempoPercorrido = Math.trunc((TempoCompletoDaMusica*PorcentagemDaMusica)/100)
 
-            return(
-                `${MinutoFormatado(TempoPercorrido)}:${SegundoFormatado(TempoPercorrido)}`
+        return(
+            console.log(`${MinutoFormatado(TempoPercorrido)}:${SegundoFormatado(TempoPercorrido)}`),
+
+            `${MinutoFormatado(TempoPercorrido)}:${SegundoFormatado(TempoPercorrido)}`
         )
-    }
-    
-    function TempoDaMusicaFormatado(tempo){
-
-        return( 
-                `${MinutoFormatado(tempo)}:${SegundoFormatado(tempo)}` 
-            )
     }
 
 
@@ -53,14 +55,13 @@ const Play = (props) => {
                 <TempoDaMusicaPercorrido TempoProp={tempoDaMusicaPercorrido}/>
 
                     <input
-                        id='%DaMusica'
                         type="range"
-                        value={50}
+                        value={porcentagem}
                         min={0}
                         step={1}
                         max={100}
                         onChange={value => setPorcentagem(value.target.value)}
-                        onClickCapture={() => setTempoDaMusicaPercorrido(PorcentagemDaMusicaPercorrida(TempoCompletoDaMusica, setPorcentagem))}
+                        onMouseMoveCapture={() => setTempoDaMusicaPercorrido(() => PorcentagemDaMusicaPercorrida(TempoCompletoDaMusica, porcentagem))}
                         // oninput={UpDateTime()}
                      ></input>
 
@@ -72,7 +73,11 @@ const Play = (props) => {
 }
 
 const TempoDaMusicaPercorrido = ({TempoProp}) => {
-    return (<div>{TempoProp}</div>)
-  }
+    return (
+        <div>{TempoProp}</div>
+    )
+}
+
+
 
 export default Play
