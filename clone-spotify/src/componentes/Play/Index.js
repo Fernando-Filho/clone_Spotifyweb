@@ -9,6 +9,7 @@ import { SlLoop } from "react-icons/sl";
 
 import MinutoFormatado from './Tempo/MinutoFormatado.js'
 import SegundoFormatado  from './Tempo/SegundoFormatado.js'
+import Botão from './Butão/Index.js';
 
 const Play = (props) => {
 
@@ -46,9 +47,14 @@ const Play = (props) => {
     }
 
     // function teste () {
+    //     if ( porcentagem >= 99){ 
+    //         setPorcentagem( 0 ) 
+    //     }else { setPorcentagem(Number(porcentagem + 1)) }
+        
+    //     setTempoDaMusicaPercorrido(QuantoTempoDaMusicaPassou())
+    //     setTempoDaMusicaQueFalta(QuantoTempoDaMusicaFalta())
     //     return(
-    //         setPorcentagem(porcentagem + 1),
-    //         console.log(porcentagem)
+    //         console.log(`A porcentagem é de ${porcentagem} `)
     //     )
     // }
 
@@ -59,24 +65,19 @@ const Play = (props) => {
     return (
         <div className="Play">
 
-            <div className='Buttons'>
-                {/* <button/><RxShuffle/>
-                <button/><GiPreviousButton/> */}
+            <div className=''>
+                <RxShuffle className='Buttons'/>
+                <GiPreviousButton className='Buttons'/>
 
-                <button 
-                    // onClick={setInterval(teste, 1000)}
-                >
-                    <GiPlayButton/>
-                </button>
 
-                <button 
-                    // onClick={setTimeout(pararTeste, 1000)}
-                >
-                    <GiPauseButton/>
-                </button>
+                {Botão}
                 
-                {/* <button/><GiNextButton/>
-                <button/><SlLoop/> */}
+                {/* <GiPlayButton className='Buttons'/>
+                <GiPauseButton className='Buttons'/> */}
+
+
+                <GiNextButton className='Buttons'/>
+                <SlLoop className='Buttons'/>
             </div>
 
             <div className='TimeBar'>
@@ -91,7 +92,7 @@ const Play = (props) => {
                     onChange={value => setPorcentagem(value.target.value)}
                     // onChange={RecalculoDoTimingDaMusica}
                     onMouseMoveCapture={RecalculoDoTimingDaMusica}
-                    ></input>
+                ></input>
 
                 <TextoDoTempoDaMusica Timing={tempoDaMusicaQueFalta}/>
             </div>

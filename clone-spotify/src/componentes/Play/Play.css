@@ -15,3 +15,12 @@
 .TimeBar input{
     width: 300px;
 }
+
+.Buttons{
+    padding-right: 15px;
+    font-size: 20px;
+    color: #b3b3b3;
+}
+.Buttons:hover{
+    color: white;
+}

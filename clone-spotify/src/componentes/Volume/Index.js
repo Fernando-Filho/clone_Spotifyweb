@@ -17,16 +17,14 @@ const Volume = (props) => {
         <TiVolumeDown/>,
         <TiVolumeUp/>,
       ]
-    
-      let VolumeTeste = volume;
 
-      if (VolumeTeste >= 66) { return ( OptionIcons[3] ) }
+      if (volume >= 66) { return ( OptionIcons[3] ) }
 
-      else if (VolumeTeste >= 33) { return ( OptionIcons[2] ) }
+      else if (volume >= 33) { return ( OptionIcons[2] ) }
 
-      else if (VolumeTeste > 0) { return ( OptionIcons[1] ) }
+      else if (volume > 0) { return ( OptionIcons[1] ) }
 
-      else if (VolumeTeste == 0){ return ( OptionIcons[0] ) }
+      else if (volume == 0){ return ( OptionIcons[0] ) }
       
     }
 
