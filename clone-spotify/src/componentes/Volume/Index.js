@@ -34,7 +34,6 @@ const Volume = (props) => {
                 <Icone size={50} iconeProp={icone} className="Chield"/>
 
                 <input
-                  className="Chield"
                   type="range"
                   value={volume}
                   min={0}

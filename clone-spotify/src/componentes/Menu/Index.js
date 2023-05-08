@@ -39,7 +39,7 @@ const Menu = (props) => {
                     <h2>Músicas Curtidas</h2>
 
                 </div>
-                <div className='line'>
+                <div className='line last'>
 
                     <BsFillBookmarkFill className='IconesMenus'/>
                     <h2>Seus Episódios</h2>

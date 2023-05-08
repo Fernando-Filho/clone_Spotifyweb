@@ -1,0 +1,38 @@
+.Home{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 89%;
+    background: linear-gradient(#e66465, rgba(0, 0, 0, 0.9) 36%);
+    padding-left: 24px;
+    padding-right: 24px;
+
+}
+
+.NavButtons{
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 12px;
+}
+.NavButtons:hover{
+    cursor: pointer;
+}
+
+h1, h2{
+    color: white;
+}
+
+.Container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.MakeTO{
+    display: flex;
+    flex-direction: row;
+    
+    gap: 25px;
+}

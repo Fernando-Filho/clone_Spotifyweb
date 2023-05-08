@@ -5,4 +5,10 @@
     width: 25%;
     align-items: center;
     justify-content: right;
+    gap: 8px;
+    padding-right: 8px;
+    color: #b3b3b3;
+}
+.OptionPlay .Icons:hover{
+    color: white;
 }

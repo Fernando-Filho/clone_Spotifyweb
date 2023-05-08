@@ -1,6 +1,8 @@
 import './Music.css'
+
 import { AiFillHeart } from "react-icons/ai";
-import ImageExemplo from '../../image/ImageExemplo.jpg';
+
+import ImageExemplo from '../../image/Album.jpg';
 
 const Music = (props) => {
 

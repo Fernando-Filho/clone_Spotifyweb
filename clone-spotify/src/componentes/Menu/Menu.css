@@ -1,12 +1,17 @@
 
 .Menu{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     color: #b3b3b3;
     font-size: .7em;
 }
 
 .ParteA{
     margin-top: 10px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .ParteA  :hover{
@@ -16,37 +21,30 @@
 }
 
 .ParteB{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-bottom: 10px;
     border-bottom: solid 0.1em;
 }
 
-.ParteB  :hover{
+.ParteB :hover{
     color:white;
     transition: 0.6s;
     cursor: pointer;
 }
 
-.ParteA .line{
+.line{
     display: flex;
     flex-direction: row;
-    justify-content:flex-start;
     align-items: center;
-    padding-bottom: 20px;
+    gap: 12px;
 }
 
-.ParteB .line{
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    align-items: center;
-    padding-bottom: 20px;
+.ParteB .last{
+    padding-bottom: 24px;
 }
 
-.ParteA .IconesMenus{
-    padding-right: 15px;
-    font-size: 23px;
-}
-.ParteB .IconesMenus{
-    padding-right: 15px;
+.IconesMenus{
     font-size: 23px;
 }

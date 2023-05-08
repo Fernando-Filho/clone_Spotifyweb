@@ -2,14 +2,14 @@ import './Play.css'
 
 import React, { useState } from "react";
 
-import { GiPreviousButton, GiPlayButton, GiPauseButton, GiNextButton } from "react-icons/gi";
+import { GiPreviousButton, GiNextButton } from "react-icons/gi";
 import { RxShuffle } from "react-icons/rx";
 import { SlLoop } from "react-icons/sl";
+import { FaPlay } from "react-icons/fa";
 
 
 import MinutoFormatado from './Tempo/MinutoFormatado.js'
 import SegundoFormatado  from './Tempo/SegundoFormatado.js'
-import Botão from './Butão/Index.js';
 
 const Play = (props) => {
 
@@ -40,6 +40,7 @@ const Play = (props) => {
 
     function RecalculoDoTimingDaMusica(props){
         return(
+            console.log(props),
             setPorcentagem(props.target.value),
             setTempoDaMusicaPercorrido(QuantoTempoDaMusicaPassou()),
             setTempoDaMusicaQueFalta(QuantoTempoDaMusicaFalta())
@@ -65,36 +66,29 @@ const Play = (props) => {
     return (
         <div className="Play">
 
-            <div className=''>
+            <div className='Controlls'>
                 <RxShuffle className='Buttons'/>
                 <GiPreviousButton className='Buttons'/>
-
-
-                {Botão}
-                
-                {/* <GiPlayButton className='Buttons'/>
-                <GiPauseButton className='Buttons'/> */}
-
-
+                <button className='ControllButton'><FaPlay size={16}/></button>
                 <GiNextButton className='Buttons'/>
                 <SlLoop className='Buttons'/>
             </div>
 
             <div className='TimeBar'>
-                <TextoDoTempoDaMusica Timing={tempoDaMusicaPercorrido}/>
+                <TextoDoTempoDaMusica Timing={tempoDaMusicaPercorrido} className="Temporizador"/>
 
                 <input
+                    className='Timing'
                     type="range"
                     value={porcentagem}
                     min={0}
                     step={1}
                     max={100}
                     onChange={value => setPorcentagem(value.target.value)}
-                    // onChange={RecalculoDoTimingDaMusica}
                     onMouseMoveCapture={RecalculoDoTimingDaMusica}
                 ></input>
 
-                <TextoDoTempoDaMusica Timing={tempoDaMusicaQueFalta}/>
+                <TextoDoTempoDaMusica Timing={tempoDaMusicaQueFalta} className="Temporizador"/>
             </div>
             
         </div>
